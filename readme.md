@@ -51,7 +51,7 @@ npm i
 npx react-native run-web
 ```
 
-### Normal start (might no longer be function)
+### Normal start (might no longer be functional)
 
 ```
 cd my-project/ios
