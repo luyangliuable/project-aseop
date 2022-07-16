@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "aesop-project",
+    "slug": "aesop-project",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "aesop-project"
+}
