@@ -29,13 +29,15 @@ npm start
 
 ### Style Sheet File Organisation
 #### Main style
-> ./aesop-project/components/style/main.js
+[main](aesop-project/components/style/main.js) 
 
 #### Button style
 > ./aesop-project/components/style/buttons.js
+[button](aesop-project/components/style/button.js) 
 
 #### Footer style
 > ./aesop-project/components/style/footers.js
+[footer](aesop-project/components/style/footer.js) 
 
 ## Team Info
 
