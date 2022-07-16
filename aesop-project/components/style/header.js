@@ -2,10 +2,13 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 const header = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
+        position: "absolute",
+        top:0,
+        left:0,
+        width: "100%",
+        height:100,
+        backgroundColor: '#1e90ff',
         alignItems: 'center',
-        justifyContent: 'center',
     },
 });
 
