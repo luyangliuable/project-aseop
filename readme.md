@@ -4,6 +4,10 @@
 
 - [Project Aesop](#project-aesop)
     - [How to run](#how-to-run)
+        - [Run on ios](#run-on-ios)
+        - [Run on android](#run-on-android)
+        - [Run on web](#run-on-web)
+        - [Normal start (might no longer be function)](#normal-start-might-no-longer-be-function)
     - [Project Information](#project-information)
         - [Style Sheet File Organisation](#style-sheet-file-organisation)
             - [Main style](#main-style)
@@ -21,6 +25,34 @@
 ![logo](aesop-project/images/logo.png) 
 
 ## How to run
+
+### Run on ios
+
+* Ensure that xCode is installed and using from mac os
+```bash
+npm i
+npx react-native run-ios
+```
+
+
+### Run on android
+
+* Ensure that android studio is installed
+```bash
+yarn android
+npm i
+npx react-native run-android
+```
+
+### Run on web
+```bash
+yarn web
+npm i
+npx react-native run-web
+```
+
+### Normal start (might no longer be function)
+
 ```
 cd my-project/ios
 npx pod-install
