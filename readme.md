@@ -17,6 +17,18 @@ npx pod-install
 npm start
 ```
 
+## Project Information
+
+### Style Sheet File Organisation
+#### Main style
+> ./aesop-project/components/style/main.js
+
+#### Button style
+> ./aesop-project/components/style/buttons.js
+
+#### Footer style
+> ./aesop-project/components/style/footers.js
+
 ## Team Info
 
 ### Team leads
