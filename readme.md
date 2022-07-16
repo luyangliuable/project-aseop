@@ -8,11 +8,13 @@
         - [Style Sheet File Organisation](#style-sheet-file-organisation)
             - [Main style](#main-style)
             - [Button style](#button-style)
+            - [header style](#header-style)
             - [Footer style](#footer-style)
     - [Team Info](#team-info)
         - [Team leads](#team-leads)
         - [Software Developers](#software-developers)
     - [Project Roadmap](#project-roadmap)
+    - [Project Tree](#project-tree)
 
 <!-- markdown-toc end -->
 
@@ -52,3 +54,24 @@ npm start
 * Luyang Liu
 
 ## Project Roadmap
+
+
+## Project Tree
+```
+.
+├── App.js
+├── Story Board.fig
+├── app.json
+├── babel.config.js
+├── components
+│   ├── header.js
+│   └── style
+│       ├── buttons.js
+│       ├── header.js
+│       └── main.js
+├── images
+│   └── logo.png
+├── index.js
+├── package.json
+└── yarn.lock
+```
