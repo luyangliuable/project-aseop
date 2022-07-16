@@ -32,11 +32,13 @@ npm start
 [main](aesop-project/components/style/main.js) 
 
 #### Button style
-> ./aesop-project/components/style/buttons.js
 [button](aesop-project/components/style/button.js) 
 
+
+#### header style
+[header](aesop-project/components/style/header.js) 
+
 #### Footer style
-> ./aesop-project/components/style/footers.js
 [footer](aesop-project/components/style/footer.js) 
 
 ## Team Info
