@@ -1,4 +1,6 @@
 # Project Aesop
+
+![logo](aesop-project/images/logo.png) 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
@@ -21,8 +23,6 @@
     - [Project Tree](#project-tree)
 
 <!-- markdown-toc end -->
-
-![logo](aesop-project/images/logo.png) 
 
 ## How to run
 
