@@ -1,8 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import style from "./style/header.js";
-import HomeButton from "./buttons";
+import style from "./style/footer.js";
 
 export default class App extends Component {
 
@@ -14,10 +13,9 @@ export default class App extends Component {
     render() {
         return (
             <>
-              <View style={[ style.container, style.shadowProp ]}>
+                <View style={style.container}>
                     <Text>
-                    <HomeButton />
-                    {this.props.children}
+                        {this.props.children}
                     </Text>
                 </View>
             </>

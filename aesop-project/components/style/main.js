@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Dimensions, View, Image } from 'react-native';
 
 const main = StyleSheet.create({
     container: {
@@ -14,8 +14,14 @@ const nameContainer = StyleSheet.create({
         backgroundColor: '#8ED8F3',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 220,
-        height: 220,
+        width: '50%',
+        height: "20%",
+    },
+    shadowProp: {
+        shadowColor: '#171717',
+        shadowOffset: { width: 2, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
     },
 });
 
@@ -25,8 +31,8 @@ const imageStyles = StyleSheet.create({
         paddingTop: 50,
     },
     stretch: {
-        width: 220,
-        height: 200,
+        width: '85%',
+        height: Dimensions.get('window').width*0.8,
         resizeMode: 'stretch',
     },
 });
