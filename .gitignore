@@ -19,3 +19,4 @@ amplifytools.xcconfig
 **.sample
 #amplify-do-not-edit-end
 .log
+.expo
