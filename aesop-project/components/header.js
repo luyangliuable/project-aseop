@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Component, useEffect } from 'react';
+import { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import style from "./style/header.js";
-import Icon from "react-native-vector-icons/Ionicons";
+import HomeButton from "./buttons";
 
 export default class App extends Component {
 
@@ -15,13 +14,10 @@ export default class App extends Component {
     render() {
         return (
             <>
-                <View style={style.container}>
+              <View style={[ style.container, style.shadowProp ]}>
                     <Text>
-                        <Icon
-                            name="ios-add"
-                            color="#ccc"
-                            size={50}
-                        />
+                    <HomeButton />
+                    {this.props.children}
                     </Text>
                 </View>
             </>

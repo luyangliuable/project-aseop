@@ -1,4 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import shadowProp from './shadowprop';
+
+// window.alert(JSON.stringify( shadowProp ));
 
 const header = StyleSheet.create({
     container: {
@@ -10,11 +13,12 @@ const header = StyleSheet.create({
         top:0,
         left:0,
         width: "100%",
-        height:90,
+        height: 120,
         backgroundColor: '#1e90ff',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         flexDirection: 'row'
     },
+    shadowProp: shadowProp(1.5)
 });
 
 export default header;
