@@ -31,8 +31,8 @@ const imageStyles = StyleSheet.create({
         paddingTop: 50,
     },
     stretch: {
-        width: '50%',
-        height: Dimensions.get('window').width/2-5,
+        width: '85%',
+        height: Dimensions.get('window').width*0.8,
         resizeMode: 'stretch',
     },
 });
