@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-const header = StyleSheet.create({
-    container: {
+const buttonstyle = StyleSheet.create({
+    base: {marginLeft: "1%", marginRight: "1%"},
+    floatright: {
+        // alignSelf: "flex-end",
+        // justifyContent: "flex-end",
+        // background: "black",
         position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: 100,
-        backgroundColor: '#1e90ff',
-        alignItems: 'center',
-    },
+        right: 0,
+    }
 });
 
-export default header;
+export default buttonstyle;

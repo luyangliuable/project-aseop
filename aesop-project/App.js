@@ -26,7 +26,7 @@ export default class App extends Component {
                 <View style={style.main.container}>
                     <Header></Header>
                     <Image style={style.imageStyles.stretch} source={require('./images/logo.png')} />
-                    <View style={[ style.nameContainer.container, style.nameContainer.shadowProp ]}>
+                    <View style={[style.nameContainer.container, style.nameContainer.shadowProp]}>
                         <Text>Welcome {this.state.profile.firstname}</Text>
                     </View>
                     <StatusBar style="auto" />
