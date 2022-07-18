@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Component, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
+import { RightButton } from "./buttons";
 import Header from "./header";
 import Footer from "./footer";
 import style from "./style/main.js";
@@ -28,6 +29,7 @@ export default class App extends Component {
                         <Text>Welcome {this.state.profile.firstname}</Text>
                     </View>
                     <StatusBar style="auto" />
+                    <RightButton />
                     <Footer></Footer>
                 </View>
         );
