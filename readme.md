@@ -5,11 +5,12 @@
 **Table of Contents**
 
 - [Project Aesop](#project-aesop)
+    - [About](#about)
     - [How to run](#how-to-run)
         - [Run on ios](#run-on-ios)
         - [Run on android](#run-on-android)
         - [Run on web](#run-on-web)
-        - [Normal start (might no longer be function)](#normal-start-might-no-longer-be-function)
+        - [Normal start (might no longer be functional)](#normal-start-might-no-longer-be-functional)
     - [Project Information](#project-information)
         - [Style Sheet File Organisation](#style-sheet-file-organisation)
             - [Main style](#main-style)
@@ -23,6 +24,10 @@
     - [Project Tree](#project-tree)
 
 <!-- markdown-toc end -->
+
+
+## About
+A mobile application to deliver social stories in a way that reduces maladaptive behaviours and enhances the psychosocial wellbeing of paediatric patients
 
 ## How to run
 
