@@ -3,9 +3,31 @@ import { Component, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import style from "./style/shadowprop";
 import Icon from "react-native-vector-icons/Ionicons";
-
+import Icon2 from "react-native-vector-icons/FontAwesome5";
 
 const defaultIconSize = 30;
+
+
+class RightButton extends Component {
+    constructor(props) {
+        super(props);
+        // window.alert(Icon.getFontFamily());
+
+    };
+
+    render() {
+        return (
+            <View style={[style.shadowprop, this.props.style]}>
+                <Icon2
+                    onPress={this.props.action}
+                    name="arrow-alt-circle-right"
+                    color="#1e90ff"
+                  size={40}
+                />
+            </View>
+        );
+    }
+}
 
 class HomeButton extends Component {
 
@@ -16,7 +38,7 @@ class HomeButton extends Component {
     render() {
         return (
             <View style={[style.shadowprop, this.props.style]}>
-                <Icon
+                <Icon2
                     onPress = {this.props.action}
                     name="home"
                     color="#eee"
@@ -37,9 +59,9 @@ class ProfileButton extends Component {
     render() {
         return (
             <View style={[style.shadowprop, this.props.style]}>
-                <Icon
+                <Icon2
                     onPress={this.props.action}
-                    name="ios-person-add"
+                    name="user"
                     color="#eee"
                     size={defaultIconSize}
                 // onPress={() =>
@@ -50,4 +72,4 @@ class ProfileButton extends Component {
     }
 }
 
-export { HomeButton, ProfileButton };
+export { HomeButton, ProfileButton, RightButton };
