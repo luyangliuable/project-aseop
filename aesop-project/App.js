@@ -1,16 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Component, useEffect } from 'react';
-import { Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { getDefaultHeaderHeight } from '@react-navigation/elements';
 import { HomeButton, ProfileButton } from "./components/buttons";
 import HomeScreen from "./components/home";
 import header from "./components/style/header";
+import ProfileScreen from "./components/profile";
+import { Component, useEffect } from 'react';
 
+// import { StatusBar } from 'expo-status-bar';
+// import { Text, View, Image } from 'react-native';
+// import { getDefaultHeaderHeight } from '@react-navigation/elements';
+
+
+///////////////////////////////////////////////////////////////////////////////
+//                Create instance of StackNativeStackNavigator               //
+///////////////////////////////////////////////////////////////////////////////
 const Stack = createNativeStackNavigator();
 
+
+///////////////////////////////////////////////////////////////////////////////
+//                              Component class                              //
+///////////////////////////////////////////////////////////////////////////////
 export default class App extends Component {
 
     constructor(props) {
@@ -54,6 +64,9 @@ export default class App extends Component {
                             ),
                         }}
                     />
+
+                  {/* TODO a lot of repeated code in here. Apply DRY principles*/}
+
                     <Stack.Screen name="Profile" component={ProfileScreen}
                         options={{
                             title: 'My profile',
@@ -77,9 +90,5 @@ export default class App extends Component {
     }
 }
 
-
-const ProfileScreen = ({ navigation, route }) => {
-    return <Text>This is {route.params.name}'s profile</Text>;
-};
 
 
