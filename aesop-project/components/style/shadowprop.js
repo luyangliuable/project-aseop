@@ -5,6 +5,7 @@ const shadowProp = (radius) => StyleSheet.create({
     shadowOffset: { width: 2, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: radius,
+    // backgroundColor: "black",
 });
 
 export default shadowProp;

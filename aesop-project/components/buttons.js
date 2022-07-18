@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import style from "./style/shadowprop";
 import Icon from "react-native-vector-icons/Ionicons";
 
 class HomeButton extends Component {
@@ -11,7 +12,7 @@ class HomeButton extends Component {
 
     render() {
         return (
-            <View style={[ button.shadowprop ]}>
+            <View style={[style.shadowprop, this.props.style]}>
                 <Icon
                     name="home"
                     color="#eee"
@@ -22,17 +23,24 @@ class HomeButton extends Component {
     }
 }
 
-const button = StyleSheet.create({
-    shadowProp: {
-        shadowColor: '#171717',
-        shadowOffset: { width: 2, height: 4 },
-        shadowOpacity: 0.2,
-        shadowRadius: 3,
-    },
-    container: {
-        cursor: "pointer"
+
+class ProfileButton extends Component {
+
+    constructor(props) {
+        super(props);
+    };
+
+    render() {
+        return (
+            <View style={[style.shadowprop, this.props.style]}>
+                <Icon
+                    name="ios-person-add"
+                    color="#eee"
+                    size={50}
+                />
+            </View>
+        );
     }
-});
+}
 
-
-export default HomeButton;
+export { HomeButton, ProfileButton };

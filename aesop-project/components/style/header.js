@@ -6,17 +6,17 @@ import shadowProp from './shadowprop';
 const header = StyleSheet.create({
     container: {
         display: "flex",
+        flexDirection: 'row',
+        alignItems: 'flex-end',
         // flexStart: 'left',
-        paddingTop: "10%",
-        justifyContent: "flex-start",
+        // justifyContent: "flex-start",
         position: "absolute",
         top:0,
         left:0,
         width: "100%",
         height: 120,
+        paddingTop: "10%",
         backgroundColor: '#1e90ff',
-        alignItems: 'flex-end',
-        flexDirection: 'row'
     },
     shadowProp: shadowProp(1.5)
 });
