@@ -17,6 +17,7 @@ class HomeButton extends Component {
         return (
             <View style={[style.shadowprop, this.props.style]}>
                 <Icon
+                    onPress = {this.props.action}
                     name="home"
                     color="#eee"
                     size={defaultIconSize}
@@ -37,12 +38,12 @@ class ProfileButton extends Component {
         return (
             <View style={[style.shadowprop, this.props.style]}>
                 <Icon
+                    onPress={this.props.action}
                     name="ios-person-add"
                     color="#eee"
                     size={defaultIconSize}
-                    onPress={() =>
-                        this.props.navigation.navigate('Profile', { name: "Mike" })
-                    }
+                // onPress={() =>
+                // }
                 />
             </View>
         );

@@ -11,16 +11,46 @@ import { Component, useEffect } from 'react';
 // import { Text, View, Image } from 'react-native';
 // import { getDefaultHeaderHeight } from '@react-navigation/elements';
 
-
 ///////////////////////////////////////////////////////////////////////////////
 //                Create instance of StackNativeStackNavigator               //
 ///////////////////////////////////////////////////////////////////////////////
+
 const Stack = createNativeStackNavigator();
 
+const headerOptions = (navigation) => {
+    // window.alert(JSON.stringify( navigation ));
+    return {
+        title: 'My home',
+        headerStyle: [header.container, header.shadowProp],
+        headerTintColor: '#FFF',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+        headerLeft: (props) => {
+            // window.alert(JSON.stringify(props));
+            return (
+                <HomeButton
+                    /* {...props} */
+                    action={() => navigation.navigate("Home")}
+                    title="menu"
+                    color="#000"
+                />
+            );
+        },
+        headerRight: () => (
+            <ProfileButton
+                action={() => navigation.navigate("Profile")}
+                title="menu"
+                color="#1E90FF"
+            />
+        ),
+    };
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //                              Component class                              //
 ///////////////////////////////////////////////////////////////////////////////
+
 export default class App extends Component {
 
     constructor(props) {
@@ -30,7 +60,7 @@ export default class App extends Component {
                 firstname: "Mike",
                 lastname: "Bob",
                 age: "5",
-                dob: "12-12-2018"
+                dob: "12-12-2018",
             },
         };
         // this.headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
@@ -40,49 +70,18 @@ export default class App extends Component {
         return (
             <NavigationContainer>
                 <Stack.Navigator >
-                    <Stack.Screen name="Home" component={HomeScreen}
-                        options={{
-                            title: 'My home',
-                            headerStyle: [header.container, header.shadowProp],
-                            headerTintColor: '#FFF',
-                            headerTitleStyle: {
-                                fontWeight: 'bold',
-                            },
-                            headerLeft: () => (
-                                <HomeButton
-                                    onPress={() => alert('Clicked !!')}
-                                    title="menu"
-                                    color="#000"
-                                />
-                            ),
-                            headerRight: () => (
-                                <ProfileButton
-                                    onPress={() => alert('Clicked !!')}
-                                    title="menu"
-                                    color="#1E90FF"
-                                />
-                            ),
-                        }}
+                    <Stack.Screen
+                        name="Home"
+                        component={HomeScreen}
+                        /* This uses a callback for the options prop to access navigation and route objects. */
+                        options={({ navigation, route }) => (headerOptions(navigation))}
                     />
 
-                  {/* TODO a lot of repeated code in here. Apply DRY principles*/}
+                    {/* DONE: a lot of repeated code in here. Apply DRY principles*/}
 
                     <Stack.Screen name="Profile" component={ProfileScreen}
-                        options={{
-                            title: 'My profile',
-                            headerStyle: [header.container, header.shadowProp],
-                            headerTintColor: '#FFF',
-                            headerTitleStyle: {
-                                fontWeight: 'bold',
-                            },
-                            headerRight: () => (
-                                <ProfileButton
-                                  style={[buttonstyle.floatright, buttonstyle.base]}
-                                  navigation={this.props.navigation}
-                                />
-                            ),
-
-                        }}
+                        /* This uses a callback for the options prop to access navigation and route objects. */
+                        options={({ navigation, route }) => (headerOptions(navigation))}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
