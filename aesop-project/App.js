@@ -4,21 +4,12 @@ import { Component, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { getDefaultHeaderHeight } from '@react-navigation/elements';
+import { HomeButton, ProfileButton } from "./components/buttons";
 import HomeScreen from "./components/home";
+import header from "./components/style/header";
 
 const Stack = createNativeStackNavigator();
-
-Stack.navigationOptions = ({ navigation }) => {
-    let tabBarVisible = false;
-    let routeName = navigation.state.routes[navigation.state.index].routeName;
-    if (routeName == 'Home') {
-        tabBarVisible = false;
-    }
-
-    return {
-        tabBarVisible,
-    };
-};
 
 export default class App extends Component {
 
@@ -32,17 +23,63 @@ export default class App extends Component {
                 dob: "12-12-2018"
             },
         };
+        // this.headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
     };
 
     render() {
         return (
             <NavigationContainer>
-                <Stack.Navigator>
-                  <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
+                <Stack.Navigator >
+                    <Stack.Screen name="Home" component={HomeScreen}
+                        options={{
+                            title: 'My home',
+                            headerStyle: [header.container, header.shadowProp],
+                            headerTintColor: '#FFF',
+                            headerTitleStyle: {
+                                fontWeight: 'bold',
+                            },
+                            headerLeft: () => (
+                                <HomeButton
+                                    onPress={() => alert('Clicked !!')}
+                                    title="menu"
+                                    color="#000"
+                                />
+                            ),
+                            headerRight: () => (
+                                <ProfileButton
+                                    onPress={() => alert('Clicked !!')}
+                                    title="menu"
+                                    color="#1E90FF"
+                                />
+                            ),
+                        }}
+                    />
+                    <Stack.Screen name="Profile" component={ProfileScreen}
+                        options={{
+                            title: 'My profile',
+                            headerStyle: [header.container, header.shadowProp],
+                            headerTintColor: '#FFF',
+                            headerTitleStyle: {
+                                fontWeight: 'bold',
+                            },
+                            headerRight: () => (
+                                <ProfileButton
+                                  style={[buttonstyle.floatright, buttonstyle.base]}
+                                  navigation={this.props.navigation}
+                                />
+                            ),
+
+                        }}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         );
     }
 }
+
+
+const ProfileScreen = ({ navigation, route }) => {
+    return <Text>This is {route.params.name}'s profile</Text>;
+};
 
 
