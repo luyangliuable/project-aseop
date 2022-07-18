@@ -4,6 +4,9 @@ import { StyleSheet, View, Text } from 'react-native';
 import style from "./style/shadowprop";
 import Icon from "react-native-vector-icons/Ionicons";
 
+
+const defaultIconSize = 30;
+
 class HomeButton extends Component {
 
     constructor(props) {
@@ -16,7 +19,7 @@ class HomeButton extends Component {
                 <Icon
                     name="home"
                     color="#eee"
-                    size={50}
+                    size={defaultIconSize}
                 />
             </View>
         );
@@ -36,7 +39,10 @@ class ProfileButton extends Component {
                 <Icon
                     name="ios-person-add"
                     color="#eee"
-                    size={50}
+                    size={defaultIconSize}
+                    onPress={() =>
+                        this.props.navigation.navigate('Profile', { name: "Mike" })
+                    }
                 />
             </View>
         );

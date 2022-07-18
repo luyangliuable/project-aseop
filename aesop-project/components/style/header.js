@@ -5,18 +5,14 @@ import shadowProp from './shadowprop';
 
 const header = StyleSheet.create({
     container: {
-        display: "flex",
-        flexDirection: 'row',
-        alignItems: 'flex-end',
+        // display: "flex",
+        // flexDirection: 'row',
+        // alignItems: 'flex-end',
         // flexStart: 'left',
         // justifyContent: "flex-start",
-        position: "absolute",
-        top:0,
-        left:0,
-        width: "100%",
-        height: 120,
-        paddingTop: "10%",
-        backgroundColor: '#1e90ff',
+        // paddingTop: "10%",
+        height: 200,
+        backgroundColor: '#00bfff',
     },
     shadowProp: shadowProp(1.5)
 });

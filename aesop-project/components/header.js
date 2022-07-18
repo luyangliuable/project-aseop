@@ -17,7 +17,7 @@ export default class App extends Component {
             <>
               <View style={[ style.container, style.shadowProp ]}>
                 <HomeButton style={buttonstyle.base} />
-                <ProfileButton style={[ buttonstyle.floatright, buttonstyle.base ]} />
+                <ProfileButton style={[ buttonstyle.floatright, buttonstyle.base ]} navigation={this.props.navigation} />
                 <Text>{this.props.children}</Text>
                 </View>
             </>

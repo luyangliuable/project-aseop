@@ -23,7 +23,6 @@ export default class App extends Component {
     render() {
         return (
                 <View style={style.main.container}>
-                    <Header></Header>
                     <Image style={style.imageStyles.stretch} source={require('../images/logo.png')} />
                     <View style={[style.nameContainer.container, style.nameContainer.shadowProp]}>
                         <Text>Welcome {this.state.profile.firstname}</Text>
