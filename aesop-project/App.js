@@ -1,10 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Component, useEffect } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Header from "./components/header";
-import Footer from "./components/footer";
-import style from "./components/style/main.js";
+import { Text, View, Image } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from "./components/home";
+
+const Stack = createNativeStackNavigator();
+
+Stack.navigationOptions = ({ navigation }) => {
+    let tabBarVisible = false;
+    let routeName = navigation.state.routes[navigation.state.index].routeName;
+    if (routeName == 'Home') {
+        tabBarVisible = false;
+    }
+
+    return {
+        tabBarVisible,
+    };
+};
 
 export default class App extends Component {
 
@@ -22,17 +36,11 @@ export default class App extends Component {
 
     render() {
         return (
-            <>
-                <View style={style.main.container}>
-                    <Header></Header>
-                    <Image style={style.imageStyles.stretch} source={require('./images/logo.png')} />
-                    <View style={[style.nameContainer.container, style.nameContainer.shadowProp]}>
-                        <Text>Welcome {this.state.profile.firstname}</Text>
-                    </View>
-                    <StatusBar style="auto" />
-                    <Footer></Footer>
-                </View>
-            </>
+            <NavigationContainer>
+                <Stack.Navigator>
+                  <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
+                </Stack.Navigator>
+            </NavigationContainer>
         );
     }
 }

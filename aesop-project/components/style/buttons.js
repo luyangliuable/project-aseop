@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const buttonstyle = StyleSheet.create({
     base: {marginLeft: "1%", marginRight: "1%"},
