@@ -20,3 +20,8 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 .log
 .expo
+
+
+# Others
+.swp
+.DS_Store
