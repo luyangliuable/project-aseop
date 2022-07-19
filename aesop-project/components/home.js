@@ -32,9 +32,9 @@ export default class App extends Component {
                 </View>
                 <StatusBar style="auto" />
                 <Footer>
-                  <LeftButton navigation={this.props.navigation} style={{visibility: false}} />
                   <StartButton navigation={this.props.navigation} />
-                  <RightButton navigation={this.props.navigation} style={{ visibility: false }} />
+                  {/* <LeftButton navigation={this.props.navigation} style={{visibility: false}} /> */}
+                  {/* <RightButton navigation={this.props.navigation} style={{ visibility: false }} /> */}
                 </Footer>
             </View>
         );
