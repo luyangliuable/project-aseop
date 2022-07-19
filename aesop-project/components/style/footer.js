@@ -1,18 +1,18 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const header = StyleSheet.create({
     container: {
         display: "flex",
-        paddingTop: "10%",
-        justifyContent: "flex-start",
         position: "absolute",
+        paddingLeft: Dimensions.get('window').width/22,
+        paddingRight: Dimensions.get('window').width/22,
         top: "87%",
         left: 0,
         width: "100%",
-        height: "17%",
-        // backgroundColor: 'rgba(120,180,250,0.2)',
+        height: "13%",
         backgroundColor: '#00bfff',
-        alignItems: 'flex-end',
+        alignItems: 'center',
+        justifyContent: "space-between",
         flexDirection: 'row'
     },
 });

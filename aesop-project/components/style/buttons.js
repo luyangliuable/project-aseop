@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 const buttonstyle = StyleSheet.create({
-    base: {marginLeft: "1%", marginRight: "1%"},
+    base: {marginLeft: "20%", marginRight: "20%"},
     floatright: {
-        // alignSelf: "flex-end",
+        // justifySelf: "flex-end",
+        order: 2,
         // justifyContent: "flex-end",
         // background: "black",
-        position: "absolute",
-        right: 0,
+        // float: "right",
     }
 });
 
