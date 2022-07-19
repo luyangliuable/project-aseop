@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import style from "./style/shadowprop";
+import { TouchableNativeFeedback, View, Text } from 'react-native';
+import shadowProp from "./style/shadowprop";
 import buttonstyle from "./style/buttons";
 import Icon from "react-native-vector-icons/Ionicons";
 import Icon2 from "react-native-vector-icons/FontAwesome5";
@@ -15,13 +15,16 @@ const buttonConfig = {
 class StartButton extends Component {
     constructor(props) {
         super(props);
+        // window.alert(this.props.navigation);
     };
 
     render() {
         return (
-            <View style={[style.shadowprop, buttonstyle.floatmiddle, this.props.style]}>
-              <Text>Start</Text>
-            </View>
+            <TouchableNativeFeedback onPress={() => this.props.navigation.navigate("Departments")}>
+                <View style={[shadowProp(1.2), buttonstyle.floatmiddle, this.props.style]}>
+                    <Text>START</Text>
+                </View>
+            </TouchableNativeFeedback>
         );
     }
 }
@@ -34,7 +37,7 @@ class LeftButton extends Component {
 
     render() {
         return (
-            <View style={[style.shadowprop, buttonstyle.floatleft, buttonstyle.hidden, this.props.style]}>
+            <View style={[shadowProp, buttonstyle.floatleft, buttonstyle.hidden, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-left"
@@ -53,7 +56,9 @@ class RightButton extends Component {
 
     render() {
         return (
-            <View style={[style.shadowprop, buttonstyle.floatright, this.props.style]}>
+            <View
+              style={[shadowProp, buttonstyle.floatright, this.props.style]}
+            >
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-right"
@@ -73,7 +78,7 @@ class HomeButton extends Component {
 
     render() {
         return (
-            <View style={[style.shadowprop, this.props.style]}>
+            <View style={[shadowProp, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
                     name="home"
@@ -94,7 +99,7 @@ class ProfileButton extends Component {
 
     render() {
         return (
-            <View style={[style.shadowprop, this.props.style]}>
+            <View style={[shadowProp, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
                     name="user-alt"

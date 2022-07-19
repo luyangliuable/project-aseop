@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Component, useEffect } from 'react';
+import { Component, useContext, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
 import { RightButton, LeftButton, StartButton } from "./buttons";
 import Header from "./header";
 import Footer from "./footer";
 import style from "./style/main.js";
+
 
 export default class App extends Component {
 
@@ -19,6 +20,7 @@ export default class App extends Component {
                 dob: "12-12-2018"
             },
         };
+
     };
 
     render() {
@@ -30,9 +32,9 @@ export default class App extends Component {
                 </View>
                 <StatusBar style="auto" />
                 <Footer>
-                    <LeftButton />
-                    <StartButton />
-                    <RightButton />
+                  <LeftButton navigation={this.props.navigation} style={{visibility: false}} />
+                  <StartButton navigation={this.props.navigation} />
+                  <RightButton navigation={this.props.navigation} style={{ visibility: false }} />
                 </Footer>
             </View>
         );

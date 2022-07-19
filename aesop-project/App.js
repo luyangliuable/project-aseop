@@ -5,6 +5,7 @@ import { HomeButton, ProfileButton } from "./components/buttons";
 import HomeScreen from "./components/home";
 import header from "./components/style/header";
 import ProfileScreen from "./components/profile";
+import DepartmentSelectionScreen from "./components/departments";
 import { Component, useEffect } from 'react';
 
 // import { StatusBar } from 'expo-status-bar';
@@ -83,11 +84,13 @@ export default class App extends Component {
                         /* This uses a callback for the options prop to access navigation and route objects. */
                         options={({ navigation, route }) => (headerOptions(navigation))}
                     />
+
+                    <Stack.Screen name="Departments" component={DepartmentSelectionScreen}
+                        /* This uses a callback for the options prop to access navigation and route objects. */
+                        options={({ navigation, route }) => (headerOptions(navigation))}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         );
     }
 }
-
-
-
