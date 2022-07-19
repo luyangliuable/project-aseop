@@ -7,8 +7,8 @@ const buttonstyle = StyleSheet.create({
     floatright: {
     },
     floatmiddle: {
-        marginLeft: Dimensions.get('window').width / 5.1,
-        marginRight: Dimensions.get('window').width / 5.1,
+        marginLeft: Dimensions.get('window').width / 5,
+        marginRight: Dimensions.get('window').width / 5,
         width: 50,
         color: '#EEE',
         margin: 'auto',

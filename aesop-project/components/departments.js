@@ -18,6 +18,9 @@ export default class DepartmentSelectionScreen extends Component {
         return (
             <View style={style.main.container}>
                 <Text>Choose Department</Text>
+                <Footer>
+                    <LeftButton navigation={this.props.navigation} style={{ visibility: false }} />
+                </Footer>
             </View>
         );
     }
