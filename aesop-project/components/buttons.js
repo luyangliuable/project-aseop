@@ -2,27 +2,51 @@ import React from 'react';
 import { Component, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import style from "./style/shadowprop";
+import buttonstyle from "./style/buttons";
 import Icon from "react-native-vector-icons/Ionicons";
 import Icon2 from "react-native-vector-icons/FontAwesome5";
 
 const defaultIconSize = 30;
 
 
-class RightButton extends Component {
+const buttonConfig = {
+    defaultIconSize: 35,
+    color: "#EEE",
+}
+
+
+class LeftButton extends Component {
     constructor(props) {
         super(props);
-        // window.alert(Icon.getFontFamily());
-
     };
 
     render() {
         return (
-            <View style={[style.shadowprop, this.props.style]}>
+            <View style={[style.shadowprop, buttonstyle.base, this.props.style]}>
+                <Icon2
+                    onPress={this.props.action}
+                    name="arrow-alt-circle-left"
+                    color={buttonConfig.color}
+                    size={buttonConfig.defaultIconSize}
+                />
+            </View>
+        );
+    }
+}
+
+class RightButton extends Component {
+    constructor(props) {
+        super(props);
+    };
+
+    render() {
+        return (
+            <View style={[style.shadowprop, buttonstyle.floatright, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-right"
-                    color="#1e90ff"
-                  size={40}
+                    color={ buttonConfig.color }
+                    size={buttonConfig.defaultIconSize}
                 />
             </View>
         );
@@ -39,10 +63,10 @@ class HomeButton extends Component {
         return (
             <View style={[style.shadowprop, this.props.style]}>
                 <Icon2
-                    onPress = {this.props.action}
+                    onPress={this.props.action}
                     name="home"
-                    color="#eee"
-                    size={defaultIconSize}
+                    color={buttonConfig.color}
+                    size={buttonConfig.defaultIconSize}
                 />
             </View>
         );
@@ -61,9 +85,9 @@ class ProfileButton extends Component {
             <View style={[style.shadowprop, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
-                    name="user"
-                    color="#eee"
-                    size={defaultIconSize}
+                    name="user-alt"
+                    color={buttonConfig.color}
+                    size={buttonConfig.defaultIconSize}
                 // onPress={() =>
                 // }
                 />
@@ -72,4 +96,4 @@ class ProfileButton extends Component {
     }
 }
 
-export { HomeButton, ProfileButton, RightButton };
+export { HomeButton, ProfileButton, RightButton, LeftButton };
