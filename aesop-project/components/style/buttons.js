@@ -1,13 +1,25 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const buttonstyle = StyleSheet.create({
-    base: {marginLeft: "20%", marginRight: "20%"},
+    base: {},
+    hide: {
+        display: "none",
+    },
+    floatleft: {
+        visibility: "hidden"
+    },
+    floatmiddle: {
+        marginRight: Dimensions.get('window').width / 5,
+        marginLeft: Dimensions.get('window').width / 5,
+        color: "white",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: 100,
+        height: 50
+    },
     floatright: {
-        // justifySelf: "flex-end",
-        order: 2,
-        // justifyContent: "flex-end",
-        // background: "black",
-        // float: "right",
+        marginLeft: "auto",
     }
 });
 

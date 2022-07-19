@@ -6,12 +6,24 @@ import buttonstyle from "./style/buttons";
 import Icon from "react-native-vector-icons/Ionicons";
 import Icon2 from "react-native-vector-icons/FontAwesome5";
 
-const defaultIconSize = 30;
-
-
 const buttonConfig = {
     defaultIconSize: 35,
-    color: "#EEE",
+    color: "#FFF",
+};
+
+
+class StartButton extends Component {
+    constructor(props) {
+        super(props);
+    };
+
+    render() {
+        return (
+            <View style={[style.shadowprop, buttonstyle.floatmiddle, this.props.style]}>
+              <Text>Start</Text>
+            </View>
+        );
+    }
 }
 
 
@@ -22,7 +34,7 @@ class LeftButton extends Component {
 
     render() {
         return (
-            <View style={[style.shadowprop, buttonstyle.base, this.props.style]}>
+            <View style={[style.shadowprop, buttonstyle.floatleft, buttonstyle.hidden, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-left"
@@ -96,4 +108,4 @@ class ProfileButton extends Component {
     }
 }
 
-export { HomeButton, ProfileButton, RightButton, LeftButton };
+export { HomeButton, ProfileButton, RightButton, LeftButton, StartButton };
