@@ -7,6 +7,21 @@ const main = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+
+    center_container: {
+        flex: 1,
+        backgroundColor: '#1e90ff',
+        position: "absolute",
+        width: "80%",
+        top: "25%",
+        height: "50%",
+        flexDirection: "column",
+        left: "10%",
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 10,
+        justifyContent: 'flex-start',
+    }
 });
 
 const nameContainer = StyleSheet.create({
