@@ -2,7 +2,6 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const header = StyleSheet.create({
     container: {
-        display: "flex",
         position: "absolute",
         paddingLeft: Dimensions.get('window').width/22,
         paddingRight: Dimensions.get('window').width/22,
@@ -12,7 +11,8 @@ const header = StyleSheet.create({
         height: "13%",
         backgroundColor: '#00bfff',
         alignItems: 'center',
-        justifyContent: "space-between",
+        display: "flex",
+        justifyContent: "center",
         flexDirection: 'row'
     },
 });
