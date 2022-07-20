@@ -1,16 +1,24 @@
 import React from 'react';
 import { Component, useEffect } from 'react';
 import { TouchableNativeFeedback, View, Text } from 'react-native';
-import shadowProp from "./style/shadowprop";
-import buttonstyle from "./style/buttons";
 import Icon from "react-native-vector-icons/Ionicons";
 import Icon2 from "react-native-vector-icons/FontAwesome5";
+
+///////////////////////////////////////////////////////////////////////////////
+//                               Import styling                              //
+///////////////////////////////////////////////////////////////////////////////i
+import shadowProp from "./style/shadowprop";
+import buttonstyle from "./style/buttons";
 
 const buttonConfig = {
     defaultIconSize: 35,
     color: "#FFF",
 };
 
+
+///////////////////////////////////////////////////////////////////////////////
+//                           Start button component                          //
+///////////////////////////////////////////////////////////////////////////////
 
 class StartButton extends Component {
     constructor(props) {
@@ -29,6 +37,10 @@ class StartButton extends Component {
     }
 }
 
+
+///////////////////////////////////////////////////////////////////////////////
+//                           Left Button component                           //
+///////////////////////////////////////////////////////////////////////////////
 
 class LeftButton extends Component {
     constructor(props) {
@@ -57,12 +69,12 @@ class RightButton extends Component {
     render() {
         return (
             <View
-              style={[shadowProp, buttonstyle.floatright, this.props.style]}
+                style={[shadowProp, buttonstyle.floatright, this.props.style]}
             >
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-right"
-                    color={ buttonConfig.color }
+                    color={buttonConfig.color}
                     size={buttonConfig.defaultIconSize}
                 />
             </View>
@@ -70,6 +82,10 @@ class RightButton extends Component {
     }
 }
 
+
+///////////////////////////////////////////////////////////////////////////////
+//                           Home Button Component                           //
+///////////////////////////////////////////////////////////////////////////////
 class HomeButton extends Component {
 
     constructor(props) {
@@ -91,6 +107,9 @@ class HomeButton extends Component {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////
+//                          Profile Button Component                         //
+///////////////////////////////////////////////////////////////////////////////
 class ProfileButton extends Component {
 
     constructor(props) {
@@ -113,4 +132,5 @@ class ProfileButton extends Component {
     }
 }
 
+// Export the buttons from this file
 export { HomeButton, ProfileButton, RightButton, LeftButton, StartButton };

@@ -15,11 +15,12 @@ import { Component, useEffect } from 'react';
 ///////////////////////////////////////////////////////////////////////////////
 //                Create instance of StackNativeStackNavigator               //
 ///////////////////////////////////////////////////////////////////////////////
-
 const Stack = createNativeStackNavigator();
 
+///////////////////////////////////////////////////////////////////////////////
+//    Header, this is not an react component but configuration for header    //
+///////////////////////////////////////////////////////////////////////////////
 const headerOptions = (navigation) => {
-    // window.alert(JSON.stringify( navigation ));
     return {
         title: 'My home',
         headerStyle: [header.container, header.shadowProp],
@@ -53,9 +54,13 @@ const headerOptions = (navigation) => {
 ///////////////////////////////////////////////////////////////////////////////
 
 export default class App extends Component {
-
     constructor(props) {
         super(props);
+
+        ////////////////////////////////////////////////////////////////////////////////
+        // TODO: Right now the profile information is hard coded for testing purposes //
+        ////////////////////////////////////////////////////////////////////////////////
+
         this.state = {
             profile: {
                 firstname: "Mike",
@@ -64,7 +69,6 @@ export default class App extends Component {
                 dob: "12-12-2018",
             },
         };
-        // this.headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
     };
 
     render() {
@@ -78,13 +82,15 @@ export default class App extends Component {
                         options={({ navigation, route }) => (headerOptions(navigation))}
                     />
 
-                    {/* DONE: a lot of repeated code in here. Apply DRY principles*/}
+                    {/* Screen for Profile */}
 
                     <Stack.Screen name="Profile" component={ProfileScreen}
                         /* This uses a callback for the options prop to access navigation and route objects. */
                         options={({ navigation, route }) => (headerOptions(navigation))}
                     />
 
+
+                    {/* Screen for Departments */}
                     <Stack.Screen name="Departments" component={DepartmentSelectionScreen}
                         /* This uses a callback for the options prop to access navigation and route objects. */
                         options={({ navigation, route }) => (headerOptions(navigation))}
