@@ -1,17 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Component, useContext, useEffect } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { Component } from 'react';
 import { Text, View, Image } from 'react-native';
-import { RightButton, LeftButton, StartButton } from "./buttons";
-import Header from "./header";
+import { StartButton } from "./buttons";
+
+///////////////////////////////////////////////////////////////////////////////
+//                             Import components                             //
+///////////////////////////////////////////////////////////////////////////////
+// import Header from "./header";
 import Footer from "./footer";
 import style from "./style/main.js";
 
 
 export default class App extends Component {
-
     constructor(props) {
         super(props);
+
+        ////////////////////////////////////////////////////////////////////////////
+        // TODO: The profile information is hard coded. Refactor to store locally //
+        ////////////////////////////////////////////////////////////////////////////
+
         this.state = {
             profile: {
                 firstname: "Mike",
@@ -32,9 +40,9 @@ export default class App extends Component {
                 </View>
                 <StatusBar style="auto" />
                 <Footer>
-                  <StartButton navigation={this.props.navigation} />
-                  {/* <LeftButton navigation={this.props.navigation} style={{visibility: false}} /> */}
-                  {/* <RightButton navigation={this.props.navigation} style={{ visibility: false }} /> */}
+                    <StartButton navigation={this.props.navigation} />
+                    {/* <LeftButton navigation={this.props.navigation} style={{visibility: false}} /> */}
+                    {/* <RightButton navigation={this.props.navigation} style={{ visibility: false }} /> */}
                 </Footer>
             </View>
         );

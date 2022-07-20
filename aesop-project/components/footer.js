@@ -3,11 +3,14 @@ import { Component } from 'react';
 import { Text, View } from 'react-native';
 import style from "./style/footer.js";
 
-export default class App extends Component {
 
+///////////////////////////////////////////////////////////////////////////////
+//                              Footer component                             //
+///////////////////////////////////////////////////////////////////////////////
+
+export default class App extends Component {
     constructor(props) {
         super(props);
-        // window.alert(JSON.stringify(style));
     };
 
     render() {
