@@ -55,6 +55,11 @@ const headerOptions = (navigation) => {
 
 export default class App extends Component {
     constructor(props) {
+        /**
+         * App component
+         * @param  {Object} props  Properties of App.
+         * @return {Void}
+         */
         super(props);
 
         ////////////////////////////////////////////////////////////////////////////////
