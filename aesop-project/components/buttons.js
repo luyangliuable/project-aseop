@@ -16,6 +16,23 @@ const buttonConfig = {
 };
 
 
+class Button extends Component {
+  constructor(props) {
+    super(props);
+  };
+
+  render() {
+    return (
+      <TouchableNativeFeedback >
+        <View style={[shadowProp(1.2), buttonstyle.base, this.props.style]}>
+          <Text>{ this.props.children }</Text>
+        </View>
+      </TouchableNativeFeedback>
+    );
+  }
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //                           Start button component                          //
 ///////////////////////////////////////////////////////////////////////////////
@@ -133,4 +150,4 @@ class ProfileButton extends Component {
 }
 
 // Export the buttons from this file
-export { HomeButton, ProfileButton, RightButton, LeftButton, StartButton };
+export { Button, HomeButton, ProfileButton, RightButton, LeftButton, StartButton };
