@@ -8,12 +8,30 @@ import Icon2 from "react-native-vector-icons/FontAwesome5";
 //                               Import styling                              //
 ///////////////////////////////////////////////////////////////////////////////i
 import shadowProp from "./style/shadowprop";
-import buttonStyle from "./style/buttons";
+import buttonStyle from "./style/buttonStyle";
 
 const buttonConfig = {
     defaultIconSize: 35,
     color: "#FFF",
 };
+
+
+///////////////////////////////////////////////////////////////////////////////
+//                                Basic Button                               //
+///////////////////////////////////////////////////////////////////////////////
+class Button extends Component {
+    constructor(props) {
+        super(props);
+    };
+
+    render() {
+        return (
+            <View style={[shadowProp(1.2), buttonStyle.base, this.props.style]}>
+            <Text>{ this.props.children }</Text>
+            </View>
+        );
+    }
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -31,9 +49,9 @@ class StartButton extends Component {
     render() {
         return (
             <TouchableNativeFeedback onPress={() => this.props.navigation.navigate("Departments")}>
-                <View style={[shadowProp(1.2), buttonStyle.floatmiddle, this.props.style]}>
-                    <Text>{ this.state.name }</Text>
-                </View>
+              <View style={[shadowProp(1.2), buttonStyle.floatmiddle, this.props.style]}>
+                <Text>{ this.state.name }</Text>
+              </View>
             </TouchableNativeFeedback>
         );
     }
@@ -52,12 +70,12 @@ class LeftButton extends Component {
     render() {
         return (
             <View style={[shadowProp, buttonStyle.floatLeft, buttonStyle.hidden, this.props.style]}>
-                <Icon2
-                    onPress={this.props.action}
-                    name="arrow-alt-circle-left"
-                    color={buttonConfig.color}
-                    size={buttonConfig.defaultIconSize}
-                />
+              <Icon2
+                onPress={this.props.action}
+                name="arrow-alt-circle-left"
+                color={buttonConfig.color}
+                size={buttonConfig.defaultIconSize}
+              />
             </View>
         );
     }
@@ -71,12 +89,12 @@ class RightButton extends Component {
     render() {
         return (
             <View style={[shadowProp, buttonStyle.floatRight, this.props.style]} >
-                <Icon2
-                    onPress={this.props.action}
-                    name="arrow-alt-circle-right"
-                    color={buttonConfig.color}
-                    size={buttonConfig.defaultIconSize}
-                />
+              <Icon2
+                onPress={this.props.action}
+                name="arrow-alt-circle-right"
+                color={buttonConfig.color}
+                size={buttonConfig.defaultIconSize}
+              />
             </View>
         );
     }
@@ -95,12 +113,12 @@ class HomeButton extends Component {
     render() {
         return (
             <View style={[shadowProp, this.props.style]}>
-                <Icon2
-                    onPress={this.props.action}
-                    name="home"
-                    color={buttonConfig.color}
-                    size={buttonConfig.defaultIconSize}
-                />
+              <Icon2
+                onPress={this.props.action}
+                name="home"
+                color={buttonConfig.color}
+                size={buttonConfig.defaultIconSize}
+              />
             </View>
         );
     }
@@ -119,18 +137,18 @@ class ProfileButton extends Component {
     render() {
         return (
             <View style={[shadowProp, this.props.style]}>
-                <Icon2
-                    onPress={this.props.action}
-                    name="user-alt"
-                    color={buttonConfig.color}
-                    size={buttonConfig.defaultIconSize}
-                // onPress={() =>
-                // }
-                />
+              <Icon2
+                onPress={this.props.action}
+                name="user-alt"
+                color={buttonConfig.color}
+                size={buttonConfig.defaultIconSize}
+            // onPress={() =>
+            // }
+              />
             </View>
         );
     }
 }
 
 // Export the buttons from this file
-export { HomeButton, ProfileButton, RightButton, LeftButton, StartButton };
+export { Button, HomeButton, ProfileButton, RightButton, LeftButton, StartButton };

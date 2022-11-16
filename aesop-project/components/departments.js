@@ -58,9 +58,11 @@ export default class DepartmentSelectionScreen extends Component {
                   </CollapseHeader>
                   <CollapseBody>
                     {/* Map the department fields into the list of items*/}
-                    {this.state.departments.surgery.map((item) => (
+                    {
+                        this.state.departments.surgery.map((item) => (
                         <Text style={accordionStyle.children}>{item}</Text>
-                    ))}
+                    ))
+                    }
                   </CollapseBody>
                 </Collapse>
               </View>
