@@ -8,7 +8,7 @@ import Icon2 from "react-native-vector-icons/FontAwesome5";
 //                               Import styling                              //
 ///////////////////////////////////////////////////////////////////////////////i
 import shadowProp from "./style/shadowprop";
-import buttonstyle from "./style/buttons";
+import buttonStyle from "./style/buttons";
 
 const buttonConfig = {
     defaultIconSize: 35,
@@ -31,7 +31,7 @@ class StartButton extends Component {
     render() {
         return (
             <TouchableNativeFeedback onPress={() => this.props.navigation.navigate("Departments")}>
-                <View style={[shadowProp(1.2), buttonstyle.floatmiddle, this.props.style]}>
+                <View style={[shadowProp(1.2), buttonStyle.floatmiddle, this.props.style]}>
                     <Text>{ this.state.name }</Text>
                 </View>
             </TouchableNativeFeedback>
@@ -51,7 +51,7 @@ class LeftButton extends Component {
 
     render() {
         return (
-            <View style={[shadowProp, buttonstyle.floatleft, buttonstyle.hidden, this.props.style]}>
+            <View style={[shadowProp, buttonStyle.floatLeft, buttonStyle.hidden, this.props.style]}>
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-left"
@@ -70,9 +70,7 @@ class RightButton extends Component {
 
     render() {
         return (
-            <View
-                style={[shadowProp, buttonstyle.floatright, this.props.style]}
-            >
+            <View style={[shadowProp, buttonStyle.floatRight, this.props.style]} >
                 <Icon2
                     onPress={this.props.action}
                     name="arrow-alt-circle-right"

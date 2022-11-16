@@ -5,12 +5,6 @@ import shadowProp from './shadowprop';
 
 const header = StyleSheet.create({
     container: {
-        // display: "flex",
-        // flexDirection: 'row',
-        // alignItems: 'flex-end',
-        // flexStart: 'left',
-        // justifyContent: "flex-start",
-        // paddingTop: "10%",
         height: 100,
         backgroundColor: '#00bfff',
     },

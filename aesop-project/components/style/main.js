@@ -23,13 +23,13 @@ const main = StyleSheet.create({
         backgroundColor: '#1e90ff',
         position: "absolute",
         width: "80%",
-        top: "25%",
-        height: "50%",
+        top: "3%",
+        height: "85%",
         flexDirection: "column",
         left: "10%",
         alignItems: 'center',
         padding: 10,
-        borderRadius: 10,
+        borderRadius: 4,
         justifyContent: 'flex-start',
     }
 });

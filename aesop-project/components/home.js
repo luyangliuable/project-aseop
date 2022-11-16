@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Component } from 'react';
 import { Text, View, Image } from 'react-native';
-import { StartButton } from "./buttons";
+import { StartButton, LeftButton, RightButton } from "./buttons";
 
 ///////////////////////////////////////////////////////////////////////////////
 //                             Import components                             //
@@ -40,9 +40,9 @@ export default class App extends Component {
                 <StatusBar style="auto" />
                 <Image style={style.imageStyles.stretchSmall} source={require('../images/hospital_logo.png')} />
                 <Footer>
+                    <LeftButton navigation={this.props.navigation} />
                     <StartButton navigation={this.props.navigation} />
-                    {/* <LeftButton navigation={this.props.navigation} style={{visibility: false}} /> */}
-                    {/* <RightButton navigation={this.props.navigation} style={{ visibility: false }} /> */}
+                    <RightButton navigation={this.props.navigation} style={{ visibility: false }} />
                 </Footer>
             </View>
         );
