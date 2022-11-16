@@ -13,7 +13,6 @@ export default class Header extends Component {
 
     constructor(props) {
         super(props);
-        // window.alert(JSON.stringify( buttonstyle.floatright ));
     };
 
     render() {
