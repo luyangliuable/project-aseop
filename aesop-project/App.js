@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 ///////////////////////////////////////////////////////////////////////////////
 const headerOptions = (navigation) => {
     return {
-        title: 'My home',
+        title: '',
         headerStyle: [header.container, header.shadowProp],
         headerTintColor: '#FFF',
         headerTitleStyle: {
@@ -32,18 +32,18 @@ const headerOptions = (navigation) => {
             // window.alert(JSON.stringify(props));
             return (
                 <HomeButton
-                    /* {...props} */
-                    action={() => navigation.navigate("Home")}
-                    title="menu"
-                    color="#000"
+                /* {...props} */
+                  action={() => navigation.navigate("Home")}
+                  title="menu"
+                  color="#000"
                 />
             );
         },
         headerRight: () => (
             <ProfileButton
-                action={() => navigation.navigate("Profile")}
-                title="menu"
-                color="#1E90FF"
+              action={() => navigation.navigate("Profile")}
+              title="menu"
+              color="#1E90FF"
             />
         ),
     };
@@ -79,28 +79,28 @@ export default class App extends Component {
     render() {
         return (
             <NavigationContainer>
-                <Stack.Navigator >
-                    <Stack.Screen
-                        name="Home"
-                        component={HomeScreen}
-                        /* This uses a callback for the options prop to access navigation and route objects. */
-                        options={({ navigation, route }) => (headerOptions(navigation))}
-                    />
+              <Stack.Navigator >
+                <Stack.Screen
+                  name="Home"
+                  component={HomeScreen}
+            /* This uses a callback for the options prop to access navigation and route objects. */
+                  options={({ navigation, route }) => (headerOptions(navigation))}
+                />
 
-                    {/* Screen for Profile */}
+                {/* Screen for Profile */}
 
-                    <Stack.Screen name="Profile" component={ProfileScreen}
-                        /* This uses a callback for the options prop to access navigation and route objects. */
-                        options={({ navigation, route }) => (headerOptions(navigation))}
-                    />
+                <Stack.Screen name="Profile" component={ProfileScreen}
+            /* This uses a callback for the options prop to access navigation and route objects. */
+                              options={({ navigation, route }) => (headerOptions(navigation))}
+                />
 
 
-                    {/* Screen for Departments */}
-                    <Stack.Screen name="Departments" component={DepartmentSelectionScreen}
-                        /* This uses a callback for the options prop to access navigation and route objects. */
-                        options={({ navigation, route }) => (headerOptions(navigation))}
-                    />
-                </Stack.Navigator>
+                {/* Screen for Departments */}
+                <Stack.Screen name="Departments" component={DepartmentSelectionScreen}
+            /* This uses a callback for the options prop to access navigation and route objects. */
+                              options={({ navigation, route }) => (headerOptions(navigation))}
+                />
+              </Stack.Navigator>
             </NavigationContainer>
         );
     }

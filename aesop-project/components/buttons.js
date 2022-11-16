@@ -23,14 +23,16 @@ const buttonConfig = {
 class StartButton extends Component {
     constructor(props) {
         super(props);
-        // window.alert(this.props.navigation);
+        this.state = {
+            name: "Start"
+        };
     };
 
     render() {
         return (
             <TouchableNativeFeedback onPress={() => this.props.navigation.navigate("Departments")}>
                 <View style={[shadowProp(1.2), buttonstyle.floatmiddle, this.props.style]}>
-                    <Text>START</Text>
+                    <Text>{ this.state.name }</Text>
                 </View>
             </TouchableNativeFeedback>
         );

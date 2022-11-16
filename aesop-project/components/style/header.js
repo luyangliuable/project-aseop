@@ -11,7 +11,7 @@ const header = StyleSheet.create({
         // flexStart: 'left',
         // justifyContent: "flex-start",
         // paddingTop: "10%",
-        height: 200,
+        height: 100,
         backgroundColor: '#00bfff',
     },
     shadowProp: shadowProp(1.5)

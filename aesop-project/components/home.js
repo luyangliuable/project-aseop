@@ -7,7 +7,6 @@ import { StartButton } from "./buttons";
 ///////////////////////////////////////////////////////////////////////////////
 //                             Import components                             //
 ///////////////////////////////////////////////////////////////////////////////
-// import Header from "./header";
 import Footer from "./footer";
 import style from "./style/main.js";
 
@@ -39,6 +38,7 @@ export default class App extends Component {
                     <Text>Welcome {this.state.profile.firstname}</Text>
                 </View>
                 <StatusBar style="auto" />
+                <Image style={style.imageStyles.stretchSmall} source={require('../images/hospital_logo.png')} />
                 <Footer>
                     <StartButton navigation={this.props.navigation} />
                     {/* <LeftButton navigation={this.props.navigation} style={{visibility: false}} /> */}
